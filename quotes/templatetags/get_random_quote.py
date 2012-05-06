@@ -1,5 +1,5 @@
 from os.path import abspath
-from os.path import basename
+from os.path import dirname
 from os.path import join
 import random
 
@@ -9,7 +9,7 @@ register = template.Library()
 
 
 LINES = open(
-    join(basename(abspath(__file__)), '..', 'data', 'quotes.dat')
+    join(dirname(abspath(__file__)), '..', 'data', 'quotes.txt')
 ).readlines()
 
 @register.simple_tag
