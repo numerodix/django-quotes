@@ -21,8 +21,10 @@ INSTALLED_APPS = (
 How to use
 ----------
 
+```html
 {% load get_random_quote %}
 
 <div id="random_quote">
     {% get_random_quote %}
 </div>
+```
