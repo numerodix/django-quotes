@@ -1,14 +1,16 @@
-import os
+from os.path import abspath
+from os.path import basename
+from os.path import join
 import random
 
 from django import template
-from django.conf import settings
 
 register = template.Library()
 
 
-LINES = open(os.path.join(settings.BASE_PATH, 'blog', 'data', 'quotes.txt')
-            ).readlines()
+LINES = open(
+    join(basename(abspath(__file__)), '..', 'data', 'quotes.dat')
+).readlines()
 
 @register.simple_tag
 def get_random_quote():
